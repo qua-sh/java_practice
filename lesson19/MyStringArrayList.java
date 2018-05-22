@@ -21,7 +21,13 @@ public class MyStringArrayList {
         ar[size()] = s;
     }
     public String get(int n){
-        return ar[n];
+        String s = null;
+        try{
+            s = ar[n];
+        }catch(IndexOutOfBoundsException e){
+            s = "添字が不正です";
+        }
+        return s;
     }
     //配列に格納されている要素数を取得する
     public int size(){
@@ -49,5 +55,6 @@ public class MyStringArrayList {
         for(int i = 0; i < m.ar.length; i++){
             System.out.println(m.get(i));
         }
+        System.out.println(m.get(100));
     }
 }
